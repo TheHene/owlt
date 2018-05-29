@@ -1,0 +1,80 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'semantic/dist/semantic.min.css' %}">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="{% static 'semantic/dist/semantic.min.js' %}"></script>
+</head>
+
+<body>
+    <form action="Form">
+        <div class="ui menu">
+            <a class="active item" href="index.html">
+                <i class="Home icon"></i>
+                Home
+            </a>
+            <a class="ui item" href="Tabel.html">
+                <i class="Table icon"></i>
+                Tabelle
+            </a>
+            <a class="ui item" href="Graph.html">
+                <i class="Line Chart icon"></i>
+                Graph
+            </a>
+            <div class="ui right menu">
+                <div class="ui item">
+                    <div class="ui left icon input">
+                        <input type="email" placeholder="E-mail" id="loginemail">
+                        <i class="user icon"></i>
+                        <div class="ui left icon action input">
+                            <input type="password" placeholder="Passwort" id="loginpw">
+                            <i class="lock icon"></i>
+                            <div class="ui button popup-button-checkbox" data-position='bottom right'>Log in
+                                <div class="ui custom flowing popup transition hidden">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" name="staylogin">
+                                        <label> Angemeldet bleiben</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui item">
+                    <div class="ui primary button">Sign up</div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="ui tiny modal">
+        <i class="close icon"></i>
+        <div class="header">Registration</div>
+        <div class="content">
+            <form class="ui regis form" action="includes/signup-inc.php" method="POST">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" placeholder="Username" name="username" id="username">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" placeholder="E-mail" name="regemail" id="regemail">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" placeholder="Password" name="regpassword" id="regpassword">
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="Password" id="checkpassword">
+                </div>
+                <div class="ui green submit button">Submit</div>
+                <div class="ui red close button">Cancel</div>
+                <div class="ui error message"></div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
